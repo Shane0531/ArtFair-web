@@ -1,4 +1,4 @@
-package com.sylc.controller;
+package com.sylc.controller.restapi;
 
 import com.sylc.model.Employee;
 import com.sylc.repo.EmployeeRepository;
