@@ -36,6 +36,11 @@ repositories {
 	maven { url 'http://sndyuk.github.com/maven' }
 }
 
+//for springboot devtools
+bootRun {
+	addResources = true
+}
+
 configurations {
 	providedRuntime
 }
