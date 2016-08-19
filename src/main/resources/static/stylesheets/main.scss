@@ -1,0 +1,15 @@
+//  Foundation for Sites Settings
+//  -----------------------------
+//
+//  Table of Contents:
+//
+//   1. app
+
+// 1. app
+// ---------
+
+#app {
+  @import 'utils/break_points.scss';
+  @import 'utils/colours.scss';
+  @import 'components/all';
+};
