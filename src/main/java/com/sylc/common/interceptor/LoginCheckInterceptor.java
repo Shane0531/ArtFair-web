@@ -29,7 +29,7 @@ public class LoginCheckInterceptor extends HandlerInterceptorAdapter {
         response.setContentType("text/html;charset=UTF-8");
         response.getWriter().print("<script>l_loginAuthFail();</script>");
       } else {
-        response.sendRedirect("/login.do");
+        response.sendRedirect("/admin/login");
       }
       return false;
     }

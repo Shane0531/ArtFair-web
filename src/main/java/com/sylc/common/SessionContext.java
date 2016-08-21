@@ -29,7 +29,7 @@ final public class SessionContext implements Serializable {
    * @return 로그인 여부 (true : 로그인 상태, false : 로그아웃 상태)
    */
   public boolean getIsLogin() {
-    if( idx > 0 && id.isEmpty() ) {
+    if( idx > 0 && !id.isEmpty() ) {
       return true;
     } else {
       return false;

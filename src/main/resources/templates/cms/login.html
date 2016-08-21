@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+  <meta charset="UTF-8"/>
+  <title>Login</title>
+  <link rel="stylesheet" href="/cms/stylesheets/login.css"/>
+
+</head>
+<body>
+
+<div class="title">SYLC Art Fair</div>
+
+<div class="login-page">
+  <div class="form">
+    <form class="login-form" method="post" onsubmit="return loginCheck();">
+      <input type="text" name="id" placeholder="username"/>
+      <input type="password" name="password" placeholder="password"/>
+      <button>login</button>
+      <p class="message"> Welcome</p>
+    </form>
+  </div>
+</div>
+
+<script src="/cms/js/login.js"></script>
+
+</body>
+</html>
