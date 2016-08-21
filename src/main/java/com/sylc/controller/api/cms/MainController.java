@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 @Controller
 @RequestMapping("/admin")
@@ -36,5 +37,13 @@ public class MainController {
   }
 
   @RequestMapping(value = "/main")
-  public String main() { return "cms/resource/default";}
+  public String main() { return "cms/main";}
+
+  // 로그아웃
+  @RequestMapping(value="/logout")
+  public String logout(HttpSession session) throws Exception {
+    session.invalidate();
+    return "redirect:login";
+  }
+
 }
