@@ -1,4 +1,4 @@
-package com.sylc.controller.api.restapi;
+package com.sylc.controller.restapi;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
