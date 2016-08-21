@@ -36,5 +36,5 @@ public class MainController {
   }
 
   @RequestMapping(value = "/main")
-  public String main() { return "cms/main";}
+  public String main() { return "cms/resource/default";}
 }
