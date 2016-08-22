@@ -1,7 +1,8 @@
-const path = require('path');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const precss = require('precss');
 const autoprefixer = require('autoprefixer');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const path = require('path');
+const precss = require('precss');
+const webpack = require('webpack');
 
 module.exports = {
   entry: './js/index.js',
@@ -30,6 +31,14 @@ module.exports = {
       {
         test: /\.scss?$/,
         loader: ExtractTextPlugin.extract({ fallbackLoader: 'style-loader', loader: 'css-loader!scss-loader'})
+      },
+      {
+        test: /\.(ttf|woff|woff2|eot|svg)$/,
+        loader: 'url?limit=100000'
+      },
+      {
+        test: /\.(png)$/,
+        loader: 'url?limit=100000'
       }
     ]
   },
@@ -37,6 +46,7 @@ module.exports = {
     return [precss, autoprefixer]
   },
   plugins: [
-    new ExtractTextPlugin({ filename: 'css/app.css', disable: false, allChunks: true })
+    new ExtractTextPlugin({ filename: 'css/app.css', disable: false, allChunks: true }),
+    new webpack.optimize.OccurrenceOrderPlugin(),
   ]
 };
