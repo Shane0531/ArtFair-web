@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="cms/resource/default :: head">
+</head>
+
+<body>
+
+<div id="wrapper">
+  <nav th:replace="cms/resource/default :: default"></nav>
+
+  <div id="page-wrapper">
+
+    <div class="container-fluid">
+
+      <!-- Page Heading -->
+      <div class="row">
+        <div class="col-lg-12">
+          <h1 class="page-header">
+            Banner
+          </h1>
+        </div>
+      </div>
+      <!-- /.row -->
+
+      <div class="row">
+        <div class="col-lg-12">
+          <h2>Banner List</h2>
+          <div class="table-responsive">
+            <table class="table table-bordered table-hover">
+              <thead>
+              <tr>
+                <th width="20">순서</th>
+                <th width="60">이름</th>
+                <th width="100">웹 이미지</th>
+                <th width="100">모바일 이미지</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr th:each="banner: ${bannerList}">
+                <td th:text="${banner.orderNum}"></td>
+                <td th:text="${banner.name}"></td>
+                <td th:text="${banner.webImageUrl}"></td>
+                <td th:text="${banner.mobileImageUrl}"></td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+      <!--Banner List-->
+
+      <div class="row">
+        <div class="col-lg-12">
+          <h2>Register</h2>
+        </div>
+      </div>
+
+
+      <!-- /.container-fluid -->
+
+    </div>
+    <!-- /#page-wrapper -->
+
+  </div>
+
+</div>
+
+
+</body>
+</html>
