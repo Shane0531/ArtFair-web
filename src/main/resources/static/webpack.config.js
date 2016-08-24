@@ -20,7 +20,7 @@ module.exports = {
         exclude: '/node_modules/',
         loader: 'babel',
         query: {
-          presets: ['react', 'es2015', 'es2016'],
+          presets: ['react', 'stage-0', 'es2015', 'es2016'],
           plugins: ['react-html-attrs']
         }
       },
@@ -30,14 +30,14 @@ module.exports = {
       },
       {
         test: /\.scss?$/,
-        loader: ExtractTextPlugin.extract({ fallbackLoader: 'style-loader', loader: 'css-loader!scss-loader'})
+        loader: ExtractTextPlugin.extract({ fallbackLoader: 'style-loader', loader: 'css-loader!sass-loader'})
       },
       {
         test: /\.(ttf|woff|woff2|eot|svg)$/,
         loader: 'url?limit=100000'
       },
       {
-        test: /\.(png)$/,
+        test: /\.(jpe?g|png|gif|svg)$/i,
         loader: 'url?limit=100000'
       }
     ]

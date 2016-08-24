@@ -5,8 +5,20 @@
 //
 //   1. Header
 //   2. Body
+//   3. Footer
 
 // 1. Header
 //    Contents related to what's in the Header
 // ---------
-@import 'header';
+@import 'header/header';
+
+// 2. Body
+//    Contents related to what's in the Body
+// ---------
+@import 'body/body';
+@import 'body/slider';
+
+// 3. Footer
+//    Contents related to what's in the Footer
+// ---------
+@import 'footer/footer';

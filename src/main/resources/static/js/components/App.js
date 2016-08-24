@@ -1,27 +1,32 @@
 import React, { Component } from 'react'
 
 import Header from './header/Header'
-import EmployeeList from './employee/EmployeeList'
+import Body from './body/Body'
+import Footer from './footer/Footer'
+
 import client from '../client'
+
+import fakeArtists from '../../fakeData/artists.js'
 
 class App extends Component {
 
   constructor(props) {
     super(props);
-    this.state = {employees: []};
+    this.state = { artists: fakeArtists };
   }
 
   componentDidMount() {
-    client({method: 'GET', path: '/api/employees'}).done(response => {
-      this.setState({employees: response.entity});
-    });
+    /*client({method: 'GET', path: '/api/employees'}).done(response => {
+      this.setState({artists: response.entity});
+    });*/
   }
 
   render() {
     return (
-      <div className="app">
+      <div class="app container">
         <Header />
-        <EmployeeList employees={this.state.employees}/>
+        <Body />
+        <Footer />
       </div>
     )
   }
