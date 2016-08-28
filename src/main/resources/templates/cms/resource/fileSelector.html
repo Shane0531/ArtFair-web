@@ -1,0 +1,53 @@
+<html xmlns:th="http://www.thymeleaf.org" xmlns:c="http://www.w3.org/1999/XSL/Transform">
+<script type="text/javascript">
+  $(function() {
+    $("#file_selector .file_name").click(function(){
+
+      var img_url   = $(this).parent().find("img").data("origin-path");
+      var target_id = $("#file_selector").data("target_id");
+      $("#"+target_id).val(img_url);
+      $('#file_selector').remove();
+    });
+    $("#file_selector .file_del").click(function(){
+      if( confirm("정말 삭제하시겠습니까?") ) {
+        var j_dom = $(this).parent();
+        var path = j_dom.find("img").data("origin-path");
+        l_ajax("DELETE", "html", "/manage/file/${category}?path="+path, null, function(html) {
+          j_dom.remove();
+        });
+      }
+    });
+  });
+
+  jQuery(function($) {
+    $('#search').keyup(function(event) {
+      var val = $(this).val();
+      if (val == "") {
+        $('#image_list div').show();
+      } else {
+        $('#image_list div').hide();
+        $("#image_list div:contains('" + val + "')").show();
+      }
+    });
+  });
+
+</script>
+<div id="file_selector" style="width:300px;border:1px solid #000;position:absolute;background-color:#ffffff;z-index:100;">
+  <div style="text-align:right;padding:5px 10px;border-bottom:1px solid #000;">
+    <input id="search" placeholder="검색단어 입력해주세요">
+    <span onclick="$('#file_selector').remove();" class="link">닫기</span></div>
+  <div id="image_list" style="background-color:#d9d9d9;">
+    <div th:each="image : ${imgList}">
+      <div style="border-bottom: 1px solid #000">
+      <span style="display:table-cell;vertical-align:middle;padding:5px 5px;">
+        <a href="${image.url}" target="_blank"><img src="${image.url}" data-origin-path="${image.path}" style="width:50px;height:50px;" title="원본보기"></a>
+      </span>
+        <span class="link file_name" style="display:table-cell;vertical-align:middle;padding-left:5px;" title="선택">${image.name}</span>
+        <span class="link file_del" style="display:table-cell;vertical-align:middle;padding-left:5px;color:red" title="삭제">[삭제]</span>
+      </div>
+    </div>
+      <div th:if="${imgList.size() == 0}" style="text-align:center;padding:20px 0px;">
+        <span>등록된 이미지가 없습니다.</span>
+      </div>
+  </div>
+</div>
