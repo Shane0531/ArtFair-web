@@ -15,6 +15,7 @@ import java.util.Map;
 
 @Controller
 @Slf4j
+@RequestMapping("/api")
 public class ManageController {
   public enum FileCategory {
     event, artist, banner, location
