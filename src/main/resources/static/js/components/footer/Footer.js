@@ -4,7 +4,11 @@ class Footer extends Component {
   render() {
     return (
       <footer>
-        <h1>후원자</h1>
+        <div class="mastfoot">
+          <div class="inner">
+            <p class="bottom-link">www.sylcartfair.com</p>
+          </div>
+        </div>
       </footer>
     )
   }

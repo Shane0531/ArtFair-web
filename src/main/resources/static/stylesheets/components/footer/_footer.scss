@@ -8,9 +8,34 @@
 // 1. footer
 // ---------
 
-footer {
-  border: 1px solid $pure_black;
-  background-repeat: repeat-x;
-  height: 100px;
-  padding: 20px;
+.masthead {
+  position: fixed;
+  top: 0;
+}
+.mastfoot {
+  bottom: 0;
+  color: #999; /* IE8 proofing */
+  color: rgba(255,255,255,.5);
+  position: fixed;
+  width: 100%;
+}
+
+.bottom-link {
+  border-bottom: 1px solid $outrageous_orange;
+  color: $outrageous_orange;
+  display: inline-block;
+  font-size: 24px;
+  opacity: .7;
+}
+
+@media (min-width: 768px) {
+  /* Pull out the header and footer */
+  .masthead {
+    position: fixed;
+    top: 0;
+  }
+  .mastfoot {
+    position: fixed;
+    bottom: 0;
+  }
 }

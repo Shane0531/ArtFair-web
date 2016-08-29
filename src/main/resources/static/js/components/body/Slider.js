@@ -17,7 +17,6 @@ class Index extends Component {
       arrows: true,
       autoplay: false,
       centerMode: true,
-      centerPadding: '50px',
       cssEase: 'ease',
       dots: true,
       draggable: false,
@@ -29,8 +28,13 @@ class Index extends Component {
       touchMove: false
     }
 
-    const items = times(5, function(key) {
-      return (<div key={key}><img src='http://placekitten.com/g/400/200' /></div>)
+    const items = times(2, function(key) {
+      return (
+        <div class="text-center slide" key={key} style={{"background": "url('http://placehold.it/1600x650')"}}>
+          <h1>Slide {key} heading</h1>
+          <p>Slide {key} text</p>
+        </div>
+      )
     })
 
     return (

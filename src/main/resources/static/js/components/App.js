@@ -23,10 +23,14 @@ class App extends Component {
 
   render() {
     return (
-      <div class="app container">
-        <Header />
-        <Body />
-        <Footer />
+      <div class="site-wrapper">
+        <div class="site-wrapper-inner">
+          <div class="cover-container">
+            <Header />
+            <Body />
+            <Footer />
+          </div>
+        </div>
       </div>
     )
   }
