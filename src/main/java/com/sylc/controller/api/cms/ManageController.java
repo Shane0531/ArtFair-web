@@ -61,8 +61,8 @@ public class ManageController {
   @RequestMapping(value = "/manage/file/{category}", method = RequestMethod.DELETE)
   @ResponseBody
   public Object fileDelete(@PathVariable FileCategory category, @RequestParam String path) {
-    if (path.startsWith("/file/" + category + "/")) {
-      path = path.replaceFirst("/file/" + category + "/", "");
+    if (path.startsWith("/files/" + category + "/")) {
+      path = path.replaceFirst("/files/" + category + "/", "");
     }
     try {
       if (fileManager.delete(getPath(category, path))) {
