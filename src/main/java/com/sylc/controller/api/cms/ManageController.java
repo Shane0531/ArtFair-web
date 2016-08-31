@@ -10,6 +10,7 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.support.StandardMultipartHttpServletRequest;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.io.BufferedInputStream;
 import java.io.InputStream;
 import java.util.Map;
 
@@ -45,19 +46,17 @@ public class ManageController {
   @RequestMapping(value = "/manage/file/{category}", method = RequestMethod.POST)
   public ModelAndView fileUpload(@PathVariable FileCategory category,
                                  @RequestParam("path") String dirPath,
-                                 @RequestParam(value = "forceFileName",required = false) String fileName,
                                  StandardMultipartHttpServletRequest request) {
     dirPath = getPath(category, dirPath);
     fileManager.makeDirectory(dirPath);
     int count = 0;
-    for (Map.Entry<String, MultipartFile> uploadFile : request.getFileMap().entrySet()) {
-      try (InputStream is = uploadFile.getValue().getInputStream()) {
-        fileManager.upload(dirPath + "/" + (fileName != null ? fileName: uploadFile.getValue().getOriginalFilename()), is);
-      } catch (Exception e) {
-        log.error("파일 업로드 실패", e);
-      }
+    try (InputStream is = new BufferedInputStream(request.getFile("file").getInputStream())) {
+      fileManager.upload(dirPath + "/" + request.getFile("file").getOriginalFilename(), is);
+    } catch (Exception e) {
+      log.error("파일 업로드 실패", e);
     }
-    ModelAndView mv = new ModelAndView("cms/resource/file_upload_complete");
+
+    ModelAndView mv = new ModelAndView("cms/resource/fileUploadComplete");
     mv.addObject("cnt", count);
     return mv;
   }
