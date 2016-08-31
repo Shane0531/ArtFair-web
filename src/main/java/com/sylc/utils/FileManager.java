@@ -20,7 +20,7 @@ public class FileManager {
   protected String uploadDir;
 
   protected String getUrlPathPrefix() {
-    return "/file/";
+    return "/files/";
   }
 
   protected String getFilePathPrefix() {

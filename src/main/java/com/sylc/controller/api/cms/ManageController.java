@@ -6,13 +6,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.support.StandardMultipartHttpServletRequest;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.io.BufferedInputStream;
 import java.io.InputStream;
-import java.util.Map;
 
 @Controller
 @Slf4j
@@ -44,7 +42,8 @@ public class ManageController {
   }
 
   @RequestMapping(value = "/manage/file/{category}", method = RequestMethod.POST)
-  public ModelAndView fileUpload(@PathVariable FileCategory category,
+  @ResponseBody
+  public String fileUpload(@PathVariable FileCategory category,
                                  @RequestParam("path") String dirPath,
                                  StandardMultipartHttpServletRequest request) {
     dirPath = getPath(category, dirPath);
@@ -56,9 +55,7 @@ public class ManageController {
       log.error("파일 업로드 실패", e);
     }
 
-    ModelAndView mv = new ModelAndView("cms/resource/fileUploadComplete");
-    mv.addObject("cnt", count);
-    return mv;
+    return "OK!";
   }
 
   @RequestMapping(value = "/manage/file/{category}", method = RequestMethod.DELETE)

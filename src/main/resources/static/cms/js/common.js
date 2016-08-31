@@ -29,7 +29,7 @@ function uploadImage(category) {
     contentType:false,
     processData:false
   }).done(function(response){
-    location.reload();
+    alert("이미지 업로드가 완료 되었습니다.");
   });
 }
 

@@ -1,16 +1,14 @@
 package com.sylc.utils;
 
-import com.sylc.lib.PropManager;
-
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
 
 public class FileInfo {
-  String name;
-  String path;
-  boolean isDirectory;
+  public String name;
+  public String path;
+  public boolean isDirectory;
   private File file;
 
   public FileInfo(boolean isDir, String path, String name, File file) {
@@ -21,7 +19,7 @@ public class FileInfo {
   }
 
   public String getUrl(){
-    return PropManager.get("url.raw") + path;
+    return path;
   }
 
   public InputStream getInputStream() {
