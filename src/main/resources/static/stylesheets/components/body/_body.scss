@@ -9,3 +9,14 @@
   padding: 10px 20px;
   font-weight: bold;
 }
+
+
+/* Style to Call to Action button */
+.cover {
+  .call-to-action {
+    &:hover {
+      color: #fff;
+      background: rgba(0,0,0,0);
+    }
+  }
+}

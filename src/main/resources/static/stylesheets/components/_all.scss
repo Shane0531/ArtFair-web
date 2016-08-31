@@ -16,7 +16,6 @@
 //    Contents related to what's in the Body
 // ---------
 @import 'body/body';
-@import 'body/slider';
 
 // 3. Footer
 //    Contents related to what's in the Footer
@@ -33,6 +32,15 @@ a:focus,
 a:hover {
   color: #fff;
 }
+
+/* Smooth hovering for links */
+a {
+  transition: all .25s ease-in-out;
+  -webkit-transition: all .25s ease-in-out; /** Chrome & Safari **/
+  -moz-transition: all .25s ease-in-out; /** Firefox **/
+  -o-transition: all .25s ease-in-out; /** Opera **/
+}
+
 
 /* Custom default button */
 .btn-default,
@@ -67,6 +75,9 @@ body {
   width: 100%;
   height: 100%; /* For at least Firefox */
   min-height: 100%;
+  background: url("/assets/image/bg.jpg") no-repeat;
+  background-size: cover;
+  background-position: top;
   -webkit-box-shadow: inset 0 0 100px rgba(0,0,0,.5);
           box-shadow: inset 0 0 100px rgba(0,0,0,.5);
 }
@@ -96,13 +107,5 @@ body {
   /* Handle the widths */
   .cover-container {
     width: 100%; /* Must be percentage or pixels for horizontal alignment */
-  }
-}
-
-@media (min-width: 992px) {
-  .masthead,
-  .mastfoot,
-  .cover-container {
-    width: 700px;
   }
 }

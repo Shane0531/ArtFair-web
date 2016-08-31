@@ -9,7 +9,6 @@
 // ---------
 .masthead {
   width: 100%;
-  background-color: #000;
 }
 
 .masthead-brand {
@@ -45,6 +44,39 @@
   border-bottom-color: #fff;
 }
 
+/* Customizing Bootstrap's button in the header nav */
+.btn-toolbar {
+  .link-locale {
+    padding: 15px;
+    border: none;
+    display: inline-block;
+  }
+}
+
+/* Adding Opacity to the Navbar header */
+.navbar-header {
+  background-color: rgba(0,0,0,0.5);
+}
+
+.navbar-inverse {
+  background-color: rgba(0,0,0,0.1);
+  border: none;
+}
+
+/* Making the hamburger menu clickable over the navbar-header */
+.navbar-toggle {
+  z-index: 10;
+}
+
+/* Centralizing the LOGO */
+.navbar-brand {
+  text-align: center;
+  display: block;
+  margin: 0 auto;
+  width: 100px;
+  float: none;
+}
+
 @media (min-width: 768px) {
   .masthead-brand {
     float: left;
@@ -52,5 +84,11 @@
   }
   .masthead-nav {
     float: right;
+  }
+  .navbar-brand {
+    position: relative;
+    text-align: left;
+    left: 0;
+    right: 0;
   }
 }

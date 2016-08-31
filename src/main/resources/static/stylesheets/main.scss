@@ -8,9 +8,11 @@
 // 1. app
 // ---------
 
-@import 'utils/break_points.scss';
-@import 'utils/colours.scss';
+@import 'utils/break_points';
+@import 'utils/colours';
+@import 'utils/transition';
 @import 'components/all';
+@import 'base/all';
 
 #app {
   width: 100%;
