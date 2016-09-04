@@ -65,6 +65,7 @@
                 <th width="60">이름</th>
                 <th width="100">웹 이미지</th>
                 <th width="100">모바일 이미지</th>
+                <th width="10">편집</th>
                 <th width="10">삭제</th>
               </tr>
               </thead>
@@ -74,6 +75,7 @@
                 <td th:text="${banner.name}"></td>
                 <td th:text="${banner.webImageUrl}"></td>
                 <td th:text="${banner.mobileImageUrl}"></td>
+                <td> <a class="btn btn-success" th:href="@{'/admin/banners/'+${banner.idx}}">편집</a></td>
                 <td> <button class="btn btn-warning" th:onclick="'javascript:deleteBanner(\'' + ${banner.idx}+ '\')'">삭제</button> </td>
               </tr>
               </tbody>
