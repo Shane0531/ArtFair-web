@@ -1,5 +1,6 @@
-<html xmlns:th="http://www.thymeleaf.org" xmlns:c="http://www.w3.org/1999/XSL/Transform">
-<script type="text/javascript">
+<html xmlns:th="http://www.thymeleaf.org">
+<script type="text/javascript" th:inline="javascript">
+  var category = [[${category}]];
   $(function() {
     $("#file_selector .file_name").click(function(){
 
@@ -12,7 +13,7 @@
       if( confirm("정말 삭제하시겠습니까?") ) {
         var j_dom = $(this).parent();
         var path = j_dom.find("input").val();
-        l_ajax("DELETE", "html", "/api/manage/file/*[[${category}]]*?path="+path, null, function(html) {
+        l_ajax("DELETE", "html", "/api/manage/file/"+category+"?path="+path, null, function(html) {
           j_dom.remove();
         });
       }

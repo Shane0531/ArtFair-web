@@ -25,7 +25,7 @@ public class CmsBannerController {
     return "cms/banner/list";
   }
 
-  @RequestMapping("/add")
+  @RequestMapping(value = "/add", method = RequestMethod.POST)
   public String addBanner(@ModelAttribute Banner banner) {
     bannerRepo.save(banner);
     return "redirect:/admin/banners/";

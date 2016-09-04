@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="cms/resource/default :: head">
+</head>
+
+<style type="text/css">
+  th,td {
+    text-align: center;
+  }
+</style>
+
+<script type="text/javascript">
+  $(function () {
+    // 이미지 업로드
+    $("#btn_upload_image").click(function () {
+      uploadImage('event');
+    });
+  });
+
+
+  function selectImage(evt_obj, target_id) {
+    l_selectFile(evt_obj, target_id, 'event', '');
+  }
+
+  function deleteEvent(idx) {
+    if (confirm("삭제하시겠습니까?")) {
+      var data = {idx: idx};
+      l_ajax("post", "json", "/admin/events/delete", data, function (json) {
+        if(json.msg == "OK")
+          location.reload();
+      });
+    }
+  }
+
+
+</script>
+
+<body>
+
+<div id="wrapper">
+  <nav th:replace="cms/resource/default :: default"></nav>
+
+  <div id="page-wrapper">
+
+    <div class="container-fluid">
+
+      <!-- Page Heading -->
+      <div class="row">
+        <div class="col-lg-12">
+          <h1 class="page-header">
+            Event
+          </h1>
+        </div>
+      </div>
+      <!-- /.row -->
+
+      <div class="row">
+        <div class="col-lg-12">
+          <h2>Event List</h2>
+          <div class="table-responsive">
+            <table class="table table-bordered table-hover">
+              <thead>
+              <tr>
+                <th width="20">idx</th>
+                <th width="60">이름</th>
+                <th width="100">이미지</th>
+                <th width="100">등록날짜</th>
+                <th width="10">편집</th>
+                <th width="10">삭제</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr th:each="event: ${eventList}">
+                <td th:text="${event.idx}"></td>
+                <td th:text="${event.name}"></td>
+                <td th:text="${event.imageUrl}"></td>
+                <td th:text="${event.writeDate}"></td>
+                <td> <a class="btn btn-success" th:href="@{'/admin/events/'+${event.idx}}">편집</a></td>
+                <td> <button class="btn btn-warning" th:onclick="'javascript:deleteEvent(\'' + ${event.idx}+ '\')'">삭제</button> </td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+      <!--Banner List-->
+
+      <div class="row">
+        <div class="col-lg-6">
+          <h2>Register</h2>
+
+          <div class="form-group">
+            <form name="imageForm" id="imageForm" enctype="multipart/form-data" method="post">
+              <input type="hidden" name="path" value=""/>
+              <input type="file" name="file" value=""/>
+              <a id="btn_upload_image" class="btn btn-primary">이미지 업로드</a>
+            </form>
+          </div>
+
+          <form action="/admin/events/add" method="post">
+
+            <div class="form-group">
+              <label>이름</label>
+              <input class="form-control" name="name" value=""/>
+              <p class="help-block">관리상 이름입니다.</p>
+            </div>
+
+            <div class="form-group">
+              <label>웹 이미지</label>
+              <input class="form-control" name="imageUrl" id="image" placeholder="이미지를 선택해주세요"/>
+              <a class="btn btn-xs btn-info" onclick="selectImage(this,'image')">이미지 선택</a>
+            </div>
+
+
+            <button type="submit" class="btn btn-lg btn-success">저장</button>
+          </form>
+
+        </div>
+      </div>
+
+
+      <!-- /.container-fluid -->
+
+    </div>
+    <!-- /#page-wrapper -->
+
+  </div>
+
+</div>
+
+
+</body>
+</html>
