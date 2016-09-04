@@ -22,6 +22,17 @@
     l_selectFile(evt_obj, target_id, 'banner', '');
   }
 
+  function deleteBanner(idx) {
+    if (confirm("삭제하시겠습니까?")) {
+      var data = {idx: idx};
+      l_ajax("post", "json", "/admin/banners/delete", data, function (json) {
+        if(json.msg == "OK")
+          location.reload();
+      });
+    }
+  }
+
+
 </script>
 
 <body>
@@ -63,7 +74,7 @@
                 <td th:text="${banner.name}"></td>
                 <td th:text="${banner.webImageUrl}"></td>
                 <td th:text="${banner.mobileImageUrl}"></td>
-                <td> <button class="btn btn-warning">삭제</button> </td>
+                <td> <button class="btn btn-warning" th:onclick="'javascript:deleteBanner(\'' + ${banner.idx}+ '\')'">삭제</button> </td>
               </tr>
               </tbody>
             </table>
@@ -86,7 +97,6 @@
             </div>
 
           <form action="/admin/banners/add" method="post">
-            <input type="hidden" name="orderNum" value="0"/>
 
             <div class="form-group">
               <label>이름</label>
@@ -104,6 +114,16 @@
               <label>모바일 이미지</label>
               <input class="form-control" name="mobileImageUrl" id="mobileImage" placeholder="이미지를 선택해주세요"/>
               <a class="btn btn-xs btn-info" onclick="selectImage(this,'mobileImage')">이미지 선택</a>
+            </div>
+
+            <div class="form-group">
+              <label>순서</label>
+              <select class="form-control" name="orderNum" id="orderNum">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+              </select>
             </div>
 
             <button type="submit" class="btn btn-lg btn-success">저장</button>

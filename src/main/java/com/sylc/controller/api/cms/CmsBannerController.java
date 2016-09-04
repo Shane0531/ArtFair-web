@@ -5,8 +5,7 @@ import com.sylc.repository.BannerRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -29,5 +28,12 @@ public class CmsBannerController {
   public String addBanner(@ModelAttribute Banner banner) {
     bannerRepo.save(banner);
     return "redirect:/admin/banners/";
+  }
+
+  @RequestMapping(value="/delete", method = RequestMethod.POST)
+  @ResponseBody
+  public String deleteBanner(@RequestParam int idx) {
+    bannerRepo.delete(idx);
+    return "{\"msg\":\"OK\"}";
   }
 }
