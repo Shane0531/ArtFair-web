@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 
 import Header from './header/Header'
-import Body from './body/Body'
+import Content from './content/Content'
 import Footer from './footer/Footer'
 
 import client from '../client'
@@ -27,7 +27,7 @@ class App extends Component {
         <div class="site-wrapper-inner">
           <div class="cover-container">
             <Header />
-            <Body />
+            <Content />
             <Footer />
           </div>
         </div>

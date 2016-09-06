@@ -7,41 +7,27 @@
 
 // 1. header
 // ---------
-.masthead {
-  width: 100%;
+/* navbar */
+.navbar {
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0px;
 }
 
-.masthead-brand {
-  margin-top: 10px;
-  margin-bottom: 10px;
+.navbar {
+  .container, .navbar-header {
+    height: 100%;
+  }
 }
 
-.masthead-nav > li {
-  display: inline-block;
-}
-.masthead-nav > li + li {
-  margin-left: 20px;
-}
-.masthead-nav > li > a {
-  padding-right: 0;
-  padding-left: 0;
-  font-size: 16px;
-  font-weight: bold;
-  color: #fff; /* IE8 proofing */
-  color: rgba(255,255,255,.75);
-  border-bottom: 2px solid transparent;
-}
-.masthead-nav > li > a:hover,
-.masthead-nav > li > a:focus {
-  background-color: transparent;
-  border-bottom-color: #a9a9a9;
-  border-bottom-color: rgba(255,255,255,.25);
-}
-.masthead-nav > .active > a,
-.masthead-nav > .active > a:hover,
-.masthead-nav > .active > a:focus {
-  color: #fff;
-  border-bottom-color: #fff;
+
+
+/* Aligning the menu items to left for MOBILE */
+/* Giving indentatio to menu items for MOBILE */
+.navbar-nav > li > a {
+  text-align: left;
+  margin-left: 15px;
 }
 
 /* Customizing Bootstrap's button in the header nav */
@@ -53,11 +39,6 @@
   }
 }
 
-/* Adding Opacity to the Navbar header */
-.navbar-header {
-  background-color: rgba(0,0,0,0.5);
-}
-
 .navbar-inverse {
   background-color: rgba(0,0,0,0.1);
   border: none;
@@ -65,16 +46,22 @@
 
 /* Making the hamburger menu clickable over the navbar-header */
 .navbar-toggle {
+  height: 100%;
   z-index: 10;
+  float: left;
+  margin-left: 15px;
+  border: none;
 }
 
 /* Centralizing the LOGO */
 .navbar-brand {
-  text-align: center;
-  display: block;
+  color: #fff !important;
+  height: 100%;
+  left: 0;
   margin: 0 auto;
-  width: 100px;
-  float: none;
+  position: absolute;
+  right: 0;
+  text-align: center;
 }
 
 @media (min-width: 768px) {
@@ -90,5 +77,12 @@
     text-align: left;
     left: 0;
     right: 0;
+  }
+
+  /* Navbar item effect */
+  .navbar-nav > li > a {
+    &:hover {
+      border-bottom: 1px solid #fff;
+    }
   }
 }

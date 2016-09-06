@@ -1,56 +1,33 @@
 import React, { Component } from 'react'
+import { Nav, Navbar, NavItem } from 'react-bootstrap'
 
 class Header extends Component {
+
   render() {
     return (
       <header>
-        <div class="masthead clearfix">
-          <div class="inner">
-            <nav class="navbar navbar-inverse navbar-static-top">
-              <div class="container">
-                <div class="navbar-header">
-                  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                  </button>
-                  <a class="navbar-brand" href="#">SYLC</a>
-                </div>
-                <div id="navbar" class="navbar-collapse collapse">
-                  <ul class="nav navbar-nav">
-                    <li class="active"><a href="#">About</a></li>
-                    <li><a href="#">Artists</a></li>
-                    <li><a href="#">Events</a></li>
-                    <li><a href="#">Location</a></li>
-                  </ul>
-                  <ul class="nav navbar-nav navbar-right">
-                    <li role="separator" class="divider"></li>
-                    <li><a href="#">Contact Us</a></li>
-                    <li><a href="#">FAQ</a></li>
-                    <li class="nav-locale button-toolbar btn-toolbar" role="toolbar">
-                      <div class="button-group btn-group">
-                        <a class="link-locale" type="button" href="#">ENG</a>
-                        <a class="link-locale" type="button" href="#">KOR</a>
-                      </div>
-                    </li>
-                    <div class="hidden-sm hidden-md hidden-lg">
-                      <li role="separator" class="divider"></li>
-                      <li><a href="#">Contact Us</a></li>
-                      <li><a href="#">FAQ</a></li>
-                      <li class="nav-locale button-toolbar btn-toolbar" role="toolbar">
-                        <div class="button-group btn-group">
-                          <a class="link-locale" type="button" href="#">ENG</a>
-                          <a class="link-locale" type="button" href="#">KOR</a>
-                        </div>
-                      </li>
-                    </div>
-                  </ul>
-                </div>
-              </div>
-            </nav>
-          </div>
-        </div>
+        <Navbar inverse>
+          <Navbar.Header>
+            <Navbar.Brand>
+              <a href="#">SYLC</a>
+            </Navbar.Brand>
+            <Navbar.Toggle />
+          </Navbar.Header>
+          <Navbar.Collapse>
+            <Nav>
+              <NavItem eventKey={1} href="#">About</NavItem>
+              <NavItem eventKey={2} href="#">Artists</NavItem>
+              <NavItem eventKey={3} href="#">Events</NavItem>
+              <NavItem eventKey={4} href="#">Location</NavItem>
+            </Nav>
+            <Nav pullRight>
+              <NavItem eventKey={1} href="#">Contact Us</NavItem>
+              <NavItem eventKey={2} href="#">FAQ</NavItem>
+              <NavItem eventKey={3} href="#">ENG</NavItem>
+              <NavItem eventKey={4} href="#">KOR</NavItem>
+            </Nav>
+          </Navbar.Collapse>
+        </Navbar>
       </header>
     )
   }

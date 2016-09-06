@@ -15,7 +15,7 @@
 // 2. Body
 //    Contents related to what's in the Body
 // ---------
-@import 'body/body';
+@import 'content/content';
 
 // 3. Footer
 //    Contents related to what's in the Footer
@@ -64,6 +64,8 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 body {
+  padding: 0 !important;
+  margin: 0 !important;
   color: #fff;
   text-align: center;
   text-shadow: 0 1px 3px rgba(0,0,0,.5);
