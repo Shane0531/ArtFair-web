@@ -22,12 +22,13 @@ class App extends Component {
   }
 
   render() {
+    const { children } = this.props
     return (
       <div class="site-wrapper">
         <div class="site-wrapper-inner">
           <div class="cover-container">
             <Header />
-            <Content />
+            { children }
             <Footer />
           </div>
         </div>

@@ -27,7 +27,7 @@ module.exports = {
       {
         test: /vendor\/.+\.(jsx|js)$/,
         loader: 'imports?jQuery=jquery,$=jquery,this=?window'
-      }
+      },
       {
         test: /\.css?$/,
         loader: ExtractTextPlugin.extract({ fallbackLoader: 'style-loader', loader: 'css-loader!postcss-loader'})

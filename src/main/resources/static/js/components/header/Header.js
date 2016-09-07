@@ -9,15 +9,15 @@ class Header extends Component {
         <Navbar inverse>
           <Navbar.Header>
             <Navbar.Brand>
-              <a href="#">SYLC</a>
+              <a href="/">SYLC</a>
             </Navbar.Brand>
             <Navbar.Toggle />
           </Navbar.Header>
           <Navbar.Collapse>
             <Nav>
-              <NavItem eventKey={1} href="#">About</NavItem>
-              <NavItem eventKey={2} href="#">Artists</NavItem>
-              <NavItem eventKey={3} href="#">Events</NavItem>
+              <NavItem eventKey={1} href="/about">About</NavItem>
+              <NavItem eventKey={2} href="/artists">Artists</NavItem>
+              <NavItem eventKey={3} href="/events">Events</NavItem>
               <NavItem eventKey={4} href="#">Location</NavItem>
             </Nav>
             <Nav pullRight>
