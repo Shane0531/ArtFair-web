@@ -1,0 +1,51 @@
+//  Foundation for Sites Settings
+//  -----------------------------
+//
+//  Table of Contents:
+//
+//   1. artist
+
+// 1. artist
+// ---------
+
+.artist {
+  margin-top: 50px;
+  margin-bottom: 40px;
+  text-align: center;
+
+  .sub-header {
+    font-weight: 200;
+    text-align: left;
+    display: table;
+    width: 100%;
+    height: 100%; /* For at least Firefox */
+    margin-bottom: 0px;
+    min-height: 100%;
+    background: url("/assets/image/sky.jpg") no-repeat;
+    background-size: cover;
+    background-position: top;
+    -webkit-box-shadow: inset 0 0 100px rgba(0,0,0,.5);
+            box-shadow: inset 0 0 100px rgba(0,0,0,.5);
+  }
+
+  .artist-list {
+    background-color: $gallery;
+  }
+}
+
+.sub-header {
+  .artist-title {
+    color: $sunset_orange;
+    margin-bottom: 5px;
+  }
+
+  .artist-sub-title {
+    color: $mercury;
+    margin-top: 0px;
+  }
+
+  .artist-title-description {
+    color: $alabaster;
+    opacity: .8;
+  }
+}

@@ -7,6 +7,10 @@
 //   2. Body
 //   3. Footer
 
+
+/*******************************
+ *********** Imports ***********
+ *******************************/
 // 1. Header
 //    Contents related to what's in the Header
 // ---------
@@ -16,16 +20,17 @@
 //    Contents related to what's in the Body
 // ---------
 @import 'content/content';
+@import 'artist/artist';
 
 // 3. Footer
 //    Contents related to what's in the Footer
 // ---------
 @import 'footer/footer';
 
-/*
- * Globals
- */
 
+/*******************************
+ *********** Globals ***********
+ *******************************/
 /* Links */
 a,
 a:focus,

@@ -25,13 +25,9 @@ class App extends Component {
     const { children } = this.props
     return (
       <div class="site-wrapper">
-        <div class="site-wrapper-inner">
-          <div class="cover-container">
-            <Header />
-            { children }
-            <Footer />
-          </div>
-        </div>
+        <Header />
+        { children }
+        <Footer />
       </div>
     )
   }
