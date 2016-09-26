@@ -9,8 +9,6 @@
 // ---------
 
 .artist {
-  margin-top: 80px;
-  margin-bottom: 40px;
   text-align: center;
 
   .artist-header {
@@ -31,7 +29,9 @@
   }
 
   .artist-list {
-    background-color: $gallery;
+    display: list-item;
+    padding-top: 48px;
+    padding-bottom: 48px;
   }
 }
 
