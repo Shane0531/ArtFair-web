@@ -15,6 +15,7 @@
 //    Contents related to what's in the Header
 // ---------
 @import 'header/header';
+@import 'header/sub_header';
 
 // 2. Body
 //    Contents related to what's in the Body
@@ -78,7 +79,7 @@ body {
 
 /* Extra markup and styles for table-esque vertical and horizontal centering */
 .site-wrapper {
-  display: block;  
+  display: block;
   background-color: $gallery;
   background-size: cover;
   background-position: top;

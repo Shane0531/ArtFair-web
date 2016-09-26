@@ -1,18 +1,16 @@
 import React, { Component } from 'react'
+import SubHeader from '../header/SubHeader'
 
 export default class Artist extends Component {
   render() {
 
     return (
       <div class="artist">
-        <div class="jumbotron artist-header">
-          <div class="container">
-            <h1 class="artist-title">Artists</h1>
-            <h3 class="artist-sub-title">SYLC Art Fair 2016</h3>
-            <p class="artist-title-description">This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
-          </div>
-        </div>
-
+        <SubHeader
+          title="Artists"
+          title_2="SYLC Art Fair 2016"
+          title_description="This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique."
+        />
         <div class="artist-list">
           <div class="container">
             <div class="row">
