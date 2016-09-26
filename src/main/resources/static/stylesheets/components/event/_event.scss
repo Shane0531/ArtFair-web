@@ -1,0 +1,16 @@
+.event {
+  text-align: center;
+
+  .event-list {
+    display: list-item;
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
+
+}
+
+.event-list {
+  .event-list-item {
+    padding-top: 15px;
+  }
+}
