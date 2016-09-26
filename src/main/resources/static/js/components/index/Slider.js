@@ -1,40 +1,19 @@
-import React, { Component } from 'react'
-import Slider from 'react-slick'
-import { times } from 'lodash'
-import 'slick-carousel/slick/slick.css'
-import 'slick-carousel/slick/slick-theme.css'
+import React, {Component} from 'react'
+import Carousel from 'nuka-carousel'
+import Decorators from './Decorators'
 
 class Index extends Component {
-  next() {
-    this.refs.slider.slickNext()
-  }
-  previous() {
-    this.refs.slider.slickPrev()
-  }
 
   render() {
-    const settings = {
-      arrows: true,
-      autoplay: false,
-      dots: true,
-      draggable: false,
-      infinite: false,
-      slidesToShow: 1,
-      slidesToScroll: 1,
-      swipe: true,
-      touchMove: false
-    }
-
-    const items = times(5, function(key) {
-      return (<div key={key}><img src='http://placekitten.com/g/400/200' /></div>)
-    })
 
     return (
-      <div>
-        <h2>Fade</h2>
-        <Slider ref='slider' {...settings}>
-          { items }
-        </Slider>
+      <div style={{margin: 'auto'}}>
+        <Carousel decorators={Decorators}>
+          <img src="http://placehold.it/1000x400&text=slide1"/>
+          <img src="http://placehold.it/1000x400&text=slide2"/>
+          <img src="http://placehold.it/1000x400&text=slide3"/>
+          <img src="http://placehold.it/1000x400&text=slide4"/>
+        </Carousel>
       </div>
     )
   }

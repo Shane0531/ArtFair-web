@@ -2,11 +2,12 @@ import React from 'react'
 import { Router, Route, IndexRoute } from 'react-router'
 import Contents from './js/components/content/Content'
 import Artists from './js/components/artist/Artist'
+import Index from './js/components/index/Slider'
 import App from './js/components/App'
 
 const routes  = (
       <Route path="/" component={App}>
-        <IndexRoute component={Contents} />
+        <IndexRoute component={Index} />
         <Route path="/artists" component={Artists}/>
       </Route>
 )
