@@ -9,11 +9,13 @@
 // ---------
 
 .artist {
-  margin-top: 50px;
+  margin-top: 80px;
   margin-bottom: 40px;
   text-align: center;
 
-  .sub-header {
+  .artist-header {
+    padding-left: 20px;
+    padding-right: 20px;
     font-weight: 200;
     text-align: left;
     display: table;
@@ -33,7 +35,13 @@
   }
 }
 
-.sub-header {
+.artist-list {
+  .artist-list-item {
+
+  }
+}
+
+.artist-header {
   .artist-title {
     color: $sunset_orange;
     margin-bottom: 5px;
