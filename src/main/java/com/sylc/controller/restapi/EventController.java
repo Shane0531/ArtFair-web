@@ -16,7 +16,8 @@ public class EventController {
 
   @RequestMapping("/")
   public List<Event> findAllEvent() {
-    return eventRepo.findAll();
+    List<Event> events = eventRepo.findAll();
+    return events;
   }
 
 }
