@@ -25,7 +25,7 @@ apply plugin: "io.spring.dependency-management"
 
 war {
 	baseName = 'sylc'
-	version = '0.0.1-SNAPSHOT'
+	version = ''
 }
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
@@ -68,6 +68,17 @@ dependencies {
 //	compile 'org.springframework.session:spring-session'
 
 	runtime("mysql:mysql-connector-java")
+}
+
+sourceSets {
+	main {
+		java {
+			srcDir 'src/main/java'
+		}
+		resources {
+			exclude '**/node_modules/**'
+		}
+	}
 }
 
 
