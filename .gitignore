@@ -6,4 +6,4 @@ built
 node_modules
 classes
 files
-.log
+npm-debug.log

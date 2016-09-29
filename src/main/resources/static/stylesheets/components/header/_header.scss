@@ -63,7 +63,7 @@
   position: absolute;
   right: 0;
   top: 20px;
-  font-size: 20px;
+  font-size: 35px;
   font-weight: 100;
 }
 
@@ -85,4 +85,13 @@
     left: 0;
     right: 0;
   }
+}
+
+.navbar-collapse {
+  overflow-y: inherit !important;
+}
+
+.navbar-collapse.in, .navbar-collapse.collapsing {
+  background: #000;
+  opacity: 0.8;
 }
