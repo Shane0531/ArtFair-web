@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import Carousel from 'nuka-carousel'
 import Decorators from './Decorators'
 
-class Index extends Component {
+class Slider extends Component {
 
   render() {
 
@@ -19,4 +19,4 @@ class Index extends Component {
   }
 }
 
-export default Index
+export default Slider
