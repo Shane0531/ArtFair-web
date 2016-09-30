@@ -4,7 +4,7 @@ import Contents from './js/components/content/Content'
 import Artists from './js/components/artist/Artist'
 import Events from './js/components/event/Event'
 import About from './js/components/about/About'
-import Index from './js/components/index/Slider'
+import Index from './js/components/index/Index'
 import Location from './js/components/location/Location'
 import App from './js/components/App'
 

@@ -24,6 +24,7 @@
 @import 'artist/artist';
 @import 'location/location';
 @import 'event/event';
+@import 'index/index';
 
 // 3. Footer
 //    Contents related to what's in the Footer
@@ -85,8 +86,6 @@ body {
   background-color: $gallery;
   background-size: cover;
   background-position: top;
-  -webkit-box-shadow: inset 0 0 100px rgba(0,0,0,.5);
-          box-shadow: inset 0 0 100px rgba(0,0,0,.5);
 }
 .site-wrapper-inner {
   display: table-cell;
@@ -119,6 +118,6 @@ body {
 
 .slider-list,
 .slider-slide > img {
-  min-height: 300px;
-  max-height: 500px;
+  min-height: 400px;
+  max-height: 700px;
 }
