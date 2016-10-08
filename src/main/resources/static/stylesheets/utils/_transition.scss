@@ -1,7 +1,0 @@
-/* e.g. transition: all .5s ease-in-out; */
-@mixin transition($target, $speed, $type) {
-  transition: $target $speed $type;
-  -webkit-transition: $target $speed $type; /** Chrome & Safari **/
-  -moz-transition: $target $speed $type; /** Firefox **/
-  -o-transition: $target $speed $type; /** Opera **/
-}
