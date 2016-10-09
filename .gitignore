@@ -7,3 +7,4 @@ node_modules
 classes
 files
 npm-debug.log
+capistrano.log

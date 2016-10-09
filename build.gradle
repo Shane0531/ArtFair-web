@@ -64,6 +64,8 @@ dependencies {
 	compile("commons-logging:commons-logging:1.0")
 	compile("org.apache.commons:commons-lang3:3.4")
 
+	compile("javax.mail:mail:1.4.7")
+
 //	compile 'org.springframework.boot:spring-boot-starter-security'
 //	compile 'org.springframework.session:spring-session'
 
