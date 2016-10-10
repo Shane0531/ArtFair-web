@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="app/resource/default :: head">
+</head>
+
+<body class="homepage">
+
+<header th:replace="app/resource/default :: header"></header>
+
+<section id="about-us">
+  <div class="container">
+    <div class="center wow fadeInDown">
+      <h2>About Art Fair 2016</h2>
+      <p class="lead">ART FAIR 2016 raise funds for charity, promotes artists and brings together our community<br/>
+        through a fun art auction event.</p>
+    </div>
+
+    <!-- about us -->
+    <div>
+      <img style="max-width: 50%; min-width: 300px;" src="image/artfair2016.jpeg" class="img-responsive imgCenter"
+           alt=""/>
+    </div><!--/#about-->
+
+    <div class="center wow fadeInDown" style="padding-top: 70px;">
+      <h2>About Rotary Club</h2>
+      <p class="lead">Rotary brings together the kind of poeple who take action to address important issues for local
+        communities worldwide.</p>
+    </div>
+
+    <!-- about us -->
+    <div>
+      <img style="max-width: 50%; min-width: 300px;" src="image/rotaryclub.jpg" class="img-responsive imgCenter"
+           alt=""/>
+    </div><!--/#about-->
+
+
+    <div class="center wow fadeInDown" style="padding-top: 70px;">
+      <h2>About SYLC(Seoul Young Leaders Club)</h2>
+      <p class="lead">The SYLC is an independetly run satellite club of the Seoul Rotary Club.<br/>
+        We are responsible for raising funding for our service projects.</p>
+    </div>
+
+    <!-- about us -->
+    <div>
+      <![CDATA[*/
+      <iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2F100002876929281%2Fvideos%2F779688428803714%2F&show_text=0&width=560" width="560" height="315" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allowFullScreen="true"></iframe>/*]]>
+    </div><!--/#about-->
+
+
+  </div>
+</section>
+
+<footer th:replace="app/resource/default :: footer"></footer>
+
+</body>
+</html>

@@ -23,6 +23,11 @@ public class IndexController {
     return "app/contact";
   }
 
+  @RequestMapping("/about")
+  public String about() {
+    return "app/about/view";
+  }
+
   @RequestMapping(value = "/sendemail", method = {RequestMethod.POST, RequestMethod.GET})
   @ResponseBody
   public Object sendEmail(@RequestParam String name, String email, String phone, String companyName, String subject, String message) {

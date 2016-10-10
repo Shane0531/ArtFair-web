@@ -2526,6 +2526,12 @@ shortcodes page css
   margin-left: 15px;
 }
 
+.imgCenter {
+  text-align: center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
 
 
 
