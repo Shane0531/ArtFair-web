@@ -1,6 +1,5 @@
 package com.sylc.common;
 
-import com.sylc.model.Manager;
 import lombok.Getter;
 
 import java.io.Serializable;
@@ -18,11 +17,11 @@ final public class SessionContext implements Serializable {
    * 생성자
    * @param manager 관리자 정보
    */
-  public SessionContext(Manager manager) {
-    idx = manager.getIdx();
-    id = manager.getId();
-    name = manager.getName();
-  }
+//  public SessionContext(Manager manager) {
+//    idx = manager.getIdx();
+//    id = manager.getId();
+//    name = manager.getName();
+//  }
 
   /**
    * 로그인 여부 체크
