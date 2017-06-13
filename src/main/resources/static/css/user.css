@@ -1,0 +1,55 @@
+.login-wrap {
+    max-width: 500px;
+    border-top: 2px solid #333;
+    color: #595959;
+    text-align: left;
+    margin: 0 auto;
+    padding-bottom: 30px;
+    padding-top: 30px;
+}
+
+.login-wrap .checkbox-inline {
+    padding-left: 0px;
+}
+
+.login-wrap .btn-primary {
+    width: 100%;
+    font-weight: 700;
+}
+
+.login-title {
+    text-align: center;
+    padding-bottom: 20px;
+
+}
+
+.login-title h2{
+    font-size: 36px;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.login-wrap .footer-box {
+    border-top: 2px solid #333;
+    padding-top: 20px;
+    margin-top: 30px;
+}
+
+.login-wrap .footer-box>span {
+    display: table-cell;
+    vertical-align: middle;
+    padding-right: 10px;
+}
+
+.signup-terms-title {
+    font-size: 15px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    font-weight: 900;
+    background: #eee;
+    padding: 10px;
+}
+
+.singup-terms {
+    margin-bottom: 60px;
+}
