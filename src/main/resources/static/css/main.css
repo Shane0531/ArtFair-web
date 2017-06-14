@@ -2549,3 +2549,21 @@ shortcodes page css
 
 
 
+ @media screen and (min-width: 768px){
+   .jumbotron {
+     padding-top: 80px !important;
+     padding-bottom: 80px !important;
+   }
+}
+
+.table thead tr {
+  background: #c52d2f;
+}
+
+.table thead tr th {
+  color: white;
+}
+
+.service-item label {
+  color: white;
+}

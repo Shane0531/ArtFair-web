@@ -13,8 +13,12 @@
   <link href="css/animate.min.css" rel="stylesheet"/>
   <link href="css/prettyPhoto.css" rel="stylesheet"/>
   <link href="css/main.css" rel="stylesheet"/>
+  <link href="css/sub_header.css" rel="stylesheet"/>
   <link href="css/user.css" rel="stylesheet"/>
   <link href="css/responsive.css" rel="stylesheet"/>
+  <link href="css/dataTables.responsive.css" rel="stylesheet" />
+  <!--<link rel="stylesheet" href="css/jquery.dataTables.min.css" />-->
+  <link rel="stylesheet" href="css/dataTables.bootstrap.min.css" />
   <!--[if lt IE 9]>
   <script src="js/html5shiv.js"></script>
   <script src="js/respond.min.js"></script>
@@ -31,11 +35,27 @@
   <script src="js/jquery.isotope.min.js"></script>
   <script src="js/main.js"></script>
   <script src="js/wow.min.js"></script>
+  <script src="js/jquery.dataTables.min.js"></script>
+  <script src="js/dataTables.responsive.js"></script>
+  <script src="js/dataTables.bootstrap.min.js"></script>
 </head><!--/head-->
 
 <body class="homepage">
 
 <header id="header" th:fragment="header">
+
+  <script>
+    $(document).ready(function () {
+      $('#myTable').dataTable({
+        info: false,
+        ordering: false,
+        processing: false,
+        "bAutoWidth": false,
+        responsive: true
+      });
+    });
+
+  </script>
 
   <nav class="navbar navbar-inverse" role="banner">
     <div class="container">
@@ -51,10 +71,10 @@
 
       <div class="collapse navbar-collapse navbar-right">
         <ul class="nav navbar-nav">
-          <li><a href="/artists">물물거래</a></li>
-          <li><a href="/events">지식거래</a></li>
+          <li><a href="/iitem">물물거래</a></li>
+          <li><a href="/kitem">지식거래</a></li>
           <li><a href="/login">로그인</a></li>
-          <li><a href="/contact">Contact</a></li>
+          <li><a href="/contact">문의</a></li>
         </ul>
       </div>
     </div><!--/.container-->

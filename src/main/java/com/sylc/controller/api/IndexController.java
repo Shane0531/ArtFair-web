@@ -28,6 +28,16 @@ public class IndexController {
     return "app/about/view";
   }
 
+  @RequestMapping("/iitem")
+  public String iitem() {
+    return "app/iitem/view";
+  }
+
+  @RequestMapping("/kitem")
+  public String kitem() {
+    return "app/kitem/view";
+  }
+
   @RequestMapping(value = "/sendemail", method = {RequestMethod.POST, RequestMethod.GET})
   @ResponseBody
   public Object sendEmail(@RequestParam String name, String email, String phone, String companyName, String subject, String message) {

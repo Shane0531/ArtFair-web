@@ -7,14 +7,14 @@
 
 <header th:replace="app/resource/default :: header"></header>
 
-<section id="">
+<section id="feature">
   <div class="container">
     <div class="login-title">
       <h2>로그인</h2>
       <p class="lead">가입하신 아이디로 로그인하고 거래를 시작해보세요!</p>
     </div>
     <div class="row login-wrap">
-      <form id="main-contact-form" class="contact-form" name="contact-form" method="post" action="/sendemail">
+      <form id="form" class="contact-form" name="form">
         <div>
           <div class="form-group">
             <label>아이디</label>
@@ -22,7 +22,7 @@
           </div>
           <div class="form-group">
             <label>비밀번호</label>
-            <input type="email" name="email" class="form-control" required="required"/>
+            <input type="password" name="email" class="form-control" required="required"/>
           </div>
         </div>
 
@@ -35,7 +35,7 @@
           </div>
         </div>
 
-        <button type="submit" class="btn-primary">
+        <button class="btn-primary">
           <span>LOGIN</span>
         </button>
 

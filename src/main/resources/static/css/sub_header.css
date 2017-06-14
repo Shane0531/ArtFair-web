@@ -1,0 +1,37 @@
+.sub-header {
+    padding-left: 20px;
+    padding-right: 20px;
+    font-weight: 200;
+    text-align: left;
+    display: table;
+    width: 100%;
+    height: 100%; /* For at least Firefox */
+    margin-bottom: 0px;
+    min-height: 100%;
+    -webkit-box-shadow: inset 0 0 100px rgba(0,0,0,.5);
+    box-shadow: inset 0 0 100px rgba(0,0,0,.5);
+}
+
+.sub-header .sub-title {
+    margin-bottom: 5px;
+    opacity: .9;
+    color: white;
+}
+
+.sub-header .sub-title-description {
+    margin-top: 10px;
+    opacity: .9;
+    color: white;
+}
+
+.sub-header-kitem {
+    background: url("/image/kitem_header.jpg") no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.sub-header-iitem {
+    background: url("/image/iitem_header.jpg") no-repeat;
+    background-size: cover;
+    background-position: center;
+}
