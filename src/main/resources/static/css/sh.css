@@ -1,0 +1,151 @@
+.item-container {
+    background: white;
+    display: grid;
+    border-radius: 3px;
+    border-bottom: 1px solid;
+    border-bottom-color: #dcdcdc;
+}
+
+.comment-container {
+    background: white;
+    display: grid;
+    border-radius: 3px;
+    border-bottom: 1px solid;
+    border-bottom-color: #bababa;
+    padding: 30px 10px;
+}
+
+.titleArea {
+    zoom: 1;
+    padding: 15px 0;
+    border-top: 1px solid;
+    border-bottom: 1px solid;
+    border-top-color: #bababa;
+    border-bottom-color: #dcdcdc;
+}
+
+.titleArea .title {
+    float: left;
+    font-size: 20px;
+    margin-right: 10px;
+    margin: 0;
+    padding: 0 10px;
+    color: #262626;
+    font-weight: 600;
+}
+
+.titleArea .sum {
+    float: right;
+    white-space: nowrap;
+    margin-top: 2px;
+    margin: 0;
+    padding: 0 10px;
+    font-size: 12px;
+}
+
+.titleArea .sum .date {
+    padding-left: 10px;
+    font-size: 9px;
+    background-repeat: no-repeat;
+    background-position: left center;
+}
+
+.titleArea .num {
+    color: #adadad;
+}
+
+.authorArea {
+    zoom: 1;
+    padding: 10px 0;
+}
+
+.authorArea .author{
+    padding-left: 10px;
+    font-weight: 600;
+}
+
+.content {
+    padding: 30px 10px;
+
+}
+
+.document_popup_menu {
+    margin-top: 10px;
+    text-align: right;
+    font-size: 11px;
+}
+
+.comment-text-display {
+    width: 100%;
+    display: flex;
+}
+
+.comment-text-input-top-text {
+    font-size: 14px;
+    margin-bottom: 5px;
+    font-weight: 700;
+    flex: 2 auto;
+}
+
+.comment-text-input-controls {
+    width: 100%;
+    flex-flow: row;
+    justify-content: flex-start;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.comment-text-input {
+    -ms-flex: 7 75%;
+    flex: 7 75%;
+    padding-right: 10px;
+}
+
+.comment-text-input-btn {
+    flex: 0 auto;
+    line-height: 45px;
+    padding-bottom: 5px;
+}
+
+.comment-text-input-btn button {
+    background-color: #c52d2f;
+    border-width: 0;
+    color: #fff;
+    width: 50px;
+    height: 50px;
+    font-size: 12px;
+}
+
+.comment-container textarea {
+    resize: none;
+    display: block;
+    min-width: 100%;
+    background-color: #fff;
+    outline: none;
+    border: 1px solid #adadad;
+}
+
+.comment-display {
+    padding: 20px 0;
+}
+
+.comment-display-username {
+    flex: 1 auto;
+    align-self: baseline;
+    font-weight: 700;
+    font-size: 15px;
+}
+
+.comment-display-meta-info {
+    flex: 1 auto;
+    align-self: baseline;
+    display: inline-block;
+    font-weight: 100;
+    color: #818181;
+    font-size: 11px;
+}
+
+.comment-item {
+    padding-bottom: 10px;
+}

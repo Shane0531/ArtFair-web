@@ -30,11 +30,21 @@ public class IndexController {
 
   @RequestMapping("/iitem")
   public String iitem() {
+    return "app/iitem/list";
+  }
+
+  @RequestMapping("/iitem/{idx}")
+  public String iitemView(@PathVariable int idx) {
     return "app/iitem/view";
   }
 
   @RequestMapping("/kitem")
   public String kitem() {
+    return "app/kitem/list";
+  }
+
+  @RequestMapping("/kitem/{idx}")
+  public String kitemView(@PathVariable int idx) {
     return "app/kitem/view";
   }
 

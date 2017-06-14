@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="app/resource/default :: head">
+</head>
+
+<body class="homepage">
+
+<header th:replace="app/resource/default :: header"></header>
+
+<div class="jumbotron sub-header sub-header-iitem">
+  <div class="container">
+    <div class="wow fadeInDown">
+      <h1 class="sub-title">물물거래</h1>
+      <p class="sub-title-description">사람들과 원하는 물건을 안전하고 간단하게 거래해보세요.</p>
+    </div>
+  </div>
+</div>
+
+<section id="feature">
+  <div class="container">
+    <div class="row">
+
+      <table id="myTable" style="width: 100%" class="table dataTable dtr-inline">
+        <thead>
+        <tr>
+          <th width="30">순번</th>
+          <th width="700">제목</th>
+          <th width="80">금액</th>
+          <th width="100">작성자</th>
+          <th width="100">작성날짜</th>
+        </tr>
+        </thead>
+        <tbody style="background: white">
+        <tr>
+          <td>3</td>
+          <td><a href="/iitem/3">전자레인지 팝니다.</a></td>
+          <td>30,000원</td>
+          <td>ando</td>
+          <td>2017/06/13</td>
+        </tr>
+
+        <tr>
+          <td>2</td>
+          <td><a href="/iitem/2">소프트웨어응용프로젝트 책 삽니다.</a></td>
+          <td>10,000원</td>
+          <td>apple</td>
+          <td>2017/06/11</td>
+        </tr>
+
+        <tr>
+          <td>1</td>
+          <td><a href="/iitem/1">선풍기 삽니다.</a></td>
+          <td>20,000원</td>
+          <td>oldPeople</td>
+          <td>2017/06/10</td>
+        </tr>
+
+        </tbody>
+      </table>
+
+      <button class="btn btn-warning">글작성하기</button>
+
+
+
+    </div>
+  </div>
+</section>
+
+
+
+<footer th:replace="app/resource/default :: footer"></footer>
+
+</body>
+</html>
