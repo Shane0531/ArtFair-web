@@ -54,7 +54,7 @@
         </tbody>
       </table>
 
-      <button class="btn btn-warning">글작성하기</button>
+      <button class="btn btn-warning" th:if="${sessionContext.getIsLogin()} != false">글작성하기</button>
 
 
 

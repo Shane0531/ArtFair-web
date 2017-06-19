@@ -1,27 +1,29 @@
 package com.sylc.common;
 
+import com.sylc.model.User;
 import lombok.Getter;
 
 import java.io.Serializable;
 
-/**
- * 세션에 보관할 정보를 담을 객체
- */
-@SuppressWarnings("serial")
 @Getter
 final public class SessionContext implements Serializable {
-  private int idx = 0;  // 일련번호
-  private String id = ""; // 아이디
-  private String name = ""; // 이름
+  private static final long serialVersionUID = 2041945177996932140L;
+
+  int idx;
+
+  String name;
+
+  String id;
+
   /**
    * 생성자
-   * @param manager 관리자 정보
+   * @param user 관리자 정보
    */
-//  public SessionContext(Manager manager) {
-//    idx = manager.getIdx();
-//    id = manager.getId();
-//    name = manager.getName();
-//  }
+  public SessionContext(User user) {
+    idx = user.getIdx();
+    name = user.getName();
+    id = user.getId();
+  }
 
   /**
    * 로그인 여부 체크

@@ -8,3 +8,4 @@ classes
 files
 npm-debug.log
 capistrano.log
+application.log

@@ -7,6 +7,29 @@
 
 <header th:replace="app/resource/default :: header"></header>
 
+<script type="text/javascript">
+  $(function () {
+
+    $("#btn_login").click(function (e) {
+      var passwd = $('#passwd').val();
+      var id = $('#id').val();
+
+
+      var data = {id: id, passwd: passwd }
+      var url = "login";
+
+      l_ajax("post", "json", url, data, function (json) {
+        if(json.result == "Y") {
+          location.href = "/";
+        } else {
+          swal("로그인 실패", "로그인 정보를 다시 확인해주세요.")
+        }
+      });
+    });
+
+  });
+</script>
+
 <section id="feature">
   <div class="container">
     <div class="login-title">
@@ -18,11 +41,11 @@
         <div>
           <div class="form-group">
             <label>아이디</label>
-            <input type="text" name="name" class="form-control" required="required"/>
+            <input type="text" id="id" class="form-control" required="required"/>
           </div>
           <div class="form-group">
             <label>비밀번호</label>
-            <input type="password" name="email" class="form-control" required="required"/>
+            <input type="password" id="passwd" class="form-control" required="required"/>
           </div>
         </div>
 
@@ -35,7 +58,7 @@
           </div>
         </div>
 
-        <button class="btn-primary">
+        <button class="btn-primary" type="button" id="btn_login">
           <span>LOGIN</span>
         </button>
 

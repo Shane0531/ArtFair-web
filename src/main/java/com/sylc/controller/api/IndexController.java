@@ -1,6 +1,8 @@
 package com.sylc.controller.api;
 
+import com.sylc.common.SessionContext;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.*;
@@ -9,43 +11,23 @@ import javax.mail.MessagingException;
 import javax.mail.Session;
 import javax.mail.Transport;
 import javax.mail.internet.*;
+import javax.servlet.http.HttpServletRequest;
 
 @Controller
-public class IndexController {
+public class IndexController extends BaseController {
 
   @RequestMapping("/")
-  public String index() {
+  public String index(HttpServletRequest request,Model model) {
+    SessionContext sessionContext = getSessionContext(request);
+    model.addAttribute("sessionContext",sessionContext);
     return "app/index";
   }
 
   @RequestMapping("/contact")
-  public String contact() {
+  public String contact(HttpServletRequest request,Model model) {
+    SessionContext sessionContext = getSessionContext(request);
+    model.addAttribute("sessionContext",sessionContext);
     return "app/contact";
-  }
-
-  @RequestMapping("/about")
-  public String about() {
-    return "app/about/view";
-  }
-
-  @RequestMapping("/iitem")
-  public String iitem() {
-    return "app/iitem/list";
-  }
-
-  @RequestMapping("/iitem/{idx}")
-  public String iitemView(@PathVariable int idx) {
-    return "app/iitem/view";
-  }
-
-  @RequestMapping("/kitem")
-  public String kitem() {
-    return "app/kitem/list";
-  }
-
-  @RequestMapping("/kitem/{idx}")
-  public String kitemView(@PathVariable int idx) {
-    return "app/kitem/view";
   }
 
   @RequestMapping(value = "/sendemail", method = {RequestMethod.POST, RequestMethod.GET})

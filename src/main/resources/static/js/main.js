@@ -68,3 +68,30 @@ jQuery(function($) {'use strict',
 		social_tools: false
 	});	
 });
+
+function l_ajax(type, dataType, url, data, callback, error) {
+  try {
+    $.ajax({
+      cache: false, type: type, dataType: dataType,
+      url: url, data : data,
+      success : function(result) {
+        callback(result);
+      },
+      error: function(xhr, textStatus, errorThrown) {
+        if( error != null ) { error(); }
+      }
+    });
+  } catch(e) {
+    if( error != null ) { error(); }
+  }
+}
+
+function l_addComma(num) {
+  if( isNaN(num) ) { return 0; }
+  var reg = /(^[+-]?\d+)(\d{3})/;
+  num += '';
+  while( reg.test(num) ) {
+    num = num.replace(reg, '$1' + ',' + '$2');
+  }
+  return num;
+}

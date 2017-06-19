@@ -2567,3 +2567,12 @@ shortcodes page css
 .service-item label {
   color: white;
 }
+
+.navbar-inverse .navbar-nav > li > p {
+  padding: 5px 12px;
+  margin: 0;
+  border-radius: 3px;
+  color: #f39c12;
+  line-height: 24px;
+  display: inline-block;
+}

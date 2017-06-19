@@ -25,6 +25,15 @@ public class User {
   String imageUrl;
 
   //학번
-  String studentNumber;
+  int studentNumber;
+
+  public User(){}
+
+  public User(String id, String name, String passwd, int studentNumber) {
+    this.id = id;
+    this.name = name;
+    this.passwd = passwd;
+    this.studentNumber = studentNumber;
+  }
 
 }

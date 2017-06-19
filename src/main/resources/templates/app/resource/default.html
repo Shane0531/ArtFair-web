@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
 <head lang="en" th:fragment="head">
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -16,6 +17,7 @@
   <link href="/css/sub_header.css" rel="stylesheet"/>
   <link href="/css/user.css" rel="stylesheet"/>
   <link href="/css/sh.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="/css/sweetalert.css" />
   <link href="/css/responsive.css" rel="stylesheet"/>
   <link href="/css/dataTables.responsive.css" rel="stylesheet" />
   <!--<link rel="stylesheet" href="css/jquery.dataTables.min.css" />-->
@@ -32,6 +34,7 @@
 
   <script src="/js/jquery.js"></script>
   <script src="/js/bootstrap.min.js"></script>
+  <script src="/js/sweetalert.min.js"></script>
   <script src="/js/jquery.prettyPhoto.js"></script>
   <script src="/js/jquery.isotope.min.js"></script>
   <script src="/js/main.js"></script>
@@ -72,9 +75,11 @@
 
       <div class="collapse navbar-collapse navbar-right">
         <ul class="nav navbar-nav">
+          <li th:if="${sessionContext.getIsLogin()} != false"><p th:text="${sessionContext.name}+님"></p></li>
           <li><a href="/iitem">물물거래</a></li>
           <li><a href="/kitem">지식거래</a></li>
-          <li><a href="/login">로그인</a></li>
+          <li th:if="${sessionContext.getIsLogin()} != false"><a href="/logout">로그아웃</a></li>
+          <li th:if="${sessionContext.getIsLogin()} != true"><a href="/login">로그인</a></li>
           <li><a href="/contact">문의</a></li>
         </ul>
       </div>
