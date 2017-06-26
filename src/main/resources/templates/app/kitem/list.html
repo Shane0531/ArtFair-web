@@ -30,31 +30,17 @@
         </tr>
         </thead>
         <tbody style="background: white">
-        <tr>
-          <td>3</td>
-          <td><a href="/kitem/3">운영체제 가르쳐주실 분 구합니다.</a></td>
-          <td>ando</td>
-          <td>2017/06/13</td>
-        </tr>
-
-        <tr>
-          <td>2</td>
-          <td><a href="/kitem/2">공무원시험 스터디 구해요~</a></td>
-          <td>apple</td>
-          <td>2017/06/11</td>
-        </tr>
-
-        <tr>
-          <td>1</td>
-          <td><a href="/kitem/1">영어공부 같이 하실분 구합니다.</a></td>
-          <td>oldPeople</td>
-          <td>2017/06/10</td>
+        <tr th:each="item,index: ${itemList}">
+          <td th:text="${index.size - index.count + 1}"></td>
+          <td><a th:href="@{'/kitem/'+${item.idx}}" th:text="${item.title}"></a></td>
+          <td th:text="${item.getUserName()}"></td>
+          <td th:text="${item.createdDate}"></td>
         </tr>
 
         </tbody>
       </table>
 
-      <button class="btn btn-warning" th:if="${sessionContext.getIsLogin()} != false">글작성하기</button>
+      <a href="/kitem/add"  class="btn btn-warning" th:if="${sessionContext.getIsLogin()} != false">글작성하기</a>
 
 
 

@@ -12,7 +12,7 @@
     border-radius: 3px;
     border-bottom: 1px solid;
     border-bottom-color: #bababa;
-    padding: 30px 10px;
+    padding: 30px 20px;
 }
 
 .titleArea {
@@ -62,6 +62,12 @@
 .authorArea .author{
     padding-left: 10px;
     font-weight: 600;
+}
+
+.authorArea .price{
+    padding-left: 10px;
+    font-weight: 600;
+    color: #FFC800;
 }
 
 .content {
@@ -148,4 +154,13 @@
 
 .comment-item {
     padding-bottom: 10px;
+}
+
+.item-add-container {
+    background: white;
+    display: grid;
+    border-radius: 3px;
+    border-bottom: 1px solid;
+    border-bottom-color: #dcdcdc;
+    padding: 20px;
 }

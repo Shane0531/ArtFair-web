@@ -7,6 +7,34 @@
 
 <header th:replace="app/resource/default :: header"></header>
 
+<script type="text/javascript" th:inline="javascript">
+  $(function () {
+
+    $("#btn_comment").click(function (e) {
+      $('#commentText').val($('#commentText').val().replace(/\n/g, "<br/>"))
+      var commentText = $('#commentText').val();
+
+      if(commentText == "") {
+        swal("댓글을 입력해주세요.")
+      }
+
+      var data = {commentText : commentText}
+
+      var url = [[${item.idx}]] + "/comment/add";
+
+      l_ajax("post", "json", url, data, function (json) {
+        if(json.result == "Y") {
+          location.reload();
+        } else {
+          swal("서버 에러입니다.")
+        }
+      });
+
+    });
+
+  });
+</script>
+
 <div class="jumbotron sub-header sub-header-kitem">
   <div class="container">
     <div class="wow fadeInDown">
@@ -23,22 +51,20 @@
       <div class="item-container">
 
         <div class="titleArea">
-          <h3 class="title">사회조사분석사2급 인강 양도합니당</h3>
+          <h3 class="title" th:text="${item.title}"></h3>
           <span class="sum">
-				<span class="read">조회 수 <span class="num">33</span></span>
-				<span class="date">2017.06.14 17:35:08</span>
+				<span class="date" th:text="${item.getFullDate()}"></span>
 			</span>
         </div>
         <div class="authorArea">
-          <span class="author">sadf</span>
+          <span class="author" th:text="${item.getUserName()}"></span>
         </div>
 
 
-        <div class="content"><p>사회조사분석사2급 인터넷강의 양도해요</p>
-          <p><br/></p>
-          <p>o1o - 7ㅣ82 -ㅣ84o&nbsp; 여기로 문자 주세요~</p>
-          <p><br/></p>
-          <p>사회조사분석사시험에서 크게 자리잡고 있는 사0환 선생님이 올해 초에 녹화한&nbsp;강의입니다~<br/></p>
+        <div class="content">
+          <p th:utext="${item.text}"></p>
+
+          <img style="max-width: 100%" th:src="${item.imageUrl}"/>
           <div class="document_popup_menu">
             <a href="#popup_menu_area" class="document_4095956" onclick="return false">이 게시물을 신고하기</a>
           </div>
@@ -48,12 +74,12 @@
 
 
       <div class="comment-container">
-        <a href="/iitem">
+        <a href="/kitem">
           <button type="button" class="dark-btn"><span>목록으로</span>
           </button>
         </a>
 
-        <h2>댓글&nbsp;&nbsp;<span style="color: #c52d2f">6</span>개</h2>
+        <h2>댓글&nbsp;&nbsp;<span style="color: #c52d2f" th:text="${commentSize}"></span>개</h2>
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 comment-text-input-container">
           <div class="comment-text-display">
             <div class="comment-text-input-top-text">
@@ -65,31 +91,33 @@
           <div class="comment-text-input-controls">
             <div class="comment-text-input">
               <div>
-                <textarea></textarea></div>
+                <textarea name="commentText" id="commentText"></textarea>
+              </div>
             </div>
             <div class="comment-text-input-btn">
-              <button disabled="" class="disabled"><span>등록</span>
+              <button id="btn_comment"><span>등록</span>
               </button>
             </div>
           </div>
 
-          <div class="comment-display">
+          <div class="comment-display" th:each="item,index: ${comments}">
 
             <div class="comment-item">
               <div class="comment-display-meta">
                 <div class="comment-display-user-meta-container">
-                  <div class="comment-display-username">
-                    Chunliia
+                  <div class="comment-display-username" th:text="${item.getUserName()}">
                   </div>
                 </div>
-                <div class="comment-display-meta-info"><span><span>19시간 전</span><!-- react-text: 2145 --> 게시됨<!-- /react-text --></span>
+                <div class="comment-display-meta-info">
+                <span>
+                <span th:text="${item.createdDate}"></span>
+              </span>
                 </div>
               </div>
               <div class="comment-display-text-container">
               <span class="Linkify">
                 <div class="comment-display-text">
-                  <p>I've never participated in a make a star project before, but since it's BIGSTAR... I had to ~ I can't wait for this comeback !
-빅스타 화이팅 ~!! :))</p>
+                  <p th:utext="${item.text}"></p>
                 </div>
               </span>
               </div>

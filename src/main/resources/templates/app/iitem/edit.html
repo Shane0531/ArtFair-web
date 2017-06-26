@@ -1,10 +1,115 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Title</title>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="app/resource/default :: head">
 </head>
-<body>
+
+<body class="homepage">
+
+<header th:replace="app/resource/default :: header"></header>
+
+<script type="text/javascript">
+  $(function () {
+
+    $("#btn_post").click(function (e) {
+
+      var title = $('#title').val();
+      var price = $('#price').val();
+      var text = $('#text').val();
+
+      if(title == "" || price == "" || text == "") {
+        swal("위의 내용 중 빠진게 있습니다.")
+      }
+
+      $('#text').val($('#text').val().replace(/\n/g, "<br/>"))
+
+      var data = new FormData(document.getElementById('Form'));
+
+      var url = "/iitem/add";
+
+      $.ajax({
+        url:url,
+        type:'POST',
+        data:data,
+        async:false,
+        cache:false,
+        contentType:false,
+        processData:false
+      }).done(function(json){
+        if(json.result == "Y") {
+          swal({
+              title: "Success",
+              text: "글작성이 완료되었습니다.",
+              type: "success",
+              showCancelButton: false,
+              confirmButtonColor: "#DD6B55",
+              confirmButtonText: "목록으로",
+              closeOnConfirm: false,
+              closeOnCancel: false
+            },
+            function(isConfirm){
+              if (isConfirm) {
+                location.href = "/iitem";
+              }
+            });
+        } else {
+          swal("에러가 발생하였습니다.")
+        }
+      });
+
+    });
+
+  });
+</script>
+
+<div class="jumbotron sub-header sub-header-iitem">
+  <div class="container">
+    <div class="wow fadeInDown">
+      <h1 class="sub-title">물물거래</h1>
+      <p class="sub-title-description">사람들과 원하는 물건을 안전하고 간단하게 거래해보세요.</p>
+    </div>
+  </div>
+</div>
+
+<section id="feature">
+  <div class="container">
+    <div class="row">
+
+      <div class="item-add-container">
+
+        <form name="Form" id="Form" enctype="multipart/form-data" method="post">
+        <div>
+          <div class="form-group">
+            <label>제목</label>
+            <input type="text" id="title" name="title" class="form-control" required="required"/>
+          </div>
+          <div class="form-group">
+            <label>금액</label>
+            <input type="number" id="price" name="price" class="form-control" required="required" placeholder="숫자만 입력하세요."/>
+          </div>
+          <div class="form-group">
+            <label>내용</label>
+            <textarea class="form-control" name="text" rows="7" id="text"></textarea>
+          </div>
+          <div class="form-group">
+            <label>이미지파일</label>
+            <input type="file" id="file" name="file" class="form-control" required="required"/>
+          </div>
+        </div>
+        </form>
+
+      </div>
+
+
+      <button class="btn-primary" type="button" id="btn_post">
+        <span>글작성</span>
+      </button>
+
+    </div>
+  </div>
+</section>
+
+
+<footer th:replace="app/resource/default :: footer"></footer>
 
 </body>
 </html>

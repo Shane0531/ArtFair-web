@@ -67,8 +67,8 @@ public class UserController extends BaseController {
 
     userRepo.save(user);
 
-    Map<String, Object> resultMap = new HashMap<>();
     log.info("SIGNUP name: {}, id : {}", nickName,id);
+    Map<String, Object> resultMap = new HashMap<>();
     resultMap.put("result", "Y");
     return resultMap;
   }

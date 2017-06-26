@@ -17,4 +17,10 @@ public class BaseController {
     return sessionContext;
   }
 
+  public String getPath(String path) {
+    //보안을 위해
+    return String.format("%s", path.replaceAll("\\.\\.", ""));
+  }
+
+
 }

@@ -20,6 +20,9 @@ public class Comment {
 
   String text;
 
-  Date createDate = new Date();
+  Date createdDate = new Date();
 
+  public String getUserName() {
+    return user.getName();
+  }
 }

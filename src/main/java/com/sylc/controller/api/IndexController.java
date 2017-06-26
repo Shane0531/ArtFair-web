@@ -1,6 +1,11 @@
 package com.sylc.controller.api;
 
 import com.sylc.common.SessionContext;
+import com.sylc.model.ItemArticle;
+import com.sylc.model.KnowledgeArticle;
+import com.sylc.repo.ItemArticleRepo;
+import com.sylc.repo.KnowledgeArticleRepo;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -16,10 +21,20 @@ import javax.servlet.http.HttpServletRequest;
 @Controller
 public class IndexController extends BaseController {
 
+  @Autowired
+  ItemArticleRepo itemArticleRepo;
+
+  @Autowired
+  KnowledgeArticleRepo knowledgeArticleRepo;
+
   @RequestMapping("/")
   public String index(HttpServletRequest request,Model model) {
     SessionContext sessionContext = getSessionContext(request);
+    List<ItemArticle> itemArticleList = itemArticleRepo.findAllByOrderByIdxDescLimit8();
+    List<KnowledgeArticle> knowledgeArticleList = knowledgeArticleRepo.findAllByOrderByIdxDescLimit8();
     model.addAttribute("sessionContext",sessionContext);
+    model.addAttribute("iitemList",itemArticleList);
+    model.addAttribute("kitemList",knowledgeArticleList);
     return "app/index";
   }
 
